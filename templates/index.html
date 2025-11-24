@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TravelScope With Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <h1 class="title">TravelScope</h1>
+  <div id="search-bar" style="text-align:center; margin-bottom:10px;">
+    <input type="text" id="search-input" placeholder="Search for any city or famous place..." style="padding:8px; width:320px; border-radius:5px; border:1px solid #bbb;">
+    <button id="search-btn" style="padding:8px 16px; border-radius:5px; background:#346beb; color:white; border:none;">Search</button>
+  </div>
+  <div id="main-layout">
+    <div id="map"></div>
+    <div id="info-panel"></div>
+  </div>
+  <script src="{{ url_for('static', filename='map.js') }}"></script>
+</body>
+</html>
