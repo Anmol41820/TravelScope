@@ -161,9 +161,9 @@ def geocode():
     params = {
         "q": place,
         "format": "json",
-        "limit": 1
+        "limit": 10
     }
-    headers = {"User-Agent": "WorldExplorerMap/1.0 (your.email@example.com)"}
+    headers = {"User-Agent": "WorldExplorerMap/1.0 (khareyashvi418@gmail.com)"}
     resp = requests.get(url, params=params, headers=headers)
     if resp.ok and resp.json():
         result = resp.json()[0]
