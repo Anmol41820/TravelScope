@@ -5,10 +5,14 @@
   <title>TravelScope With Us</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="icon" type="image/png" href= "https://img.icons8.com/color/96/airplane-take-off.png">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-  <h1 class="title">TravelScope</h1>
+   <div style="text-align:center;">
+    <img src="https://img.icons8.com/color/96/airplane-take-off.png" alt="TravelScope Plane" style="width:60px;vertical-align:middle;margin-right:16px;">
+    <span class="title" style="vertical-align:middle;">TravelScope</span>
+  </div>
   <div id="search-bar" style="text-align:center; margin-bottom:10px;">
     <input type="text" id="search-input" placeholder="Search for any city or famous place..." style="padding:8px; width:320px; border-radius:5px; border:1px solid #bbb;">
     <button id="search-btn" style="padding:8px 16px; border-radius:5px; background:#346beb; color:white; border:none;">Search</button>
