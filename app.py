@@ -85,45 +85,6 @@ def get_weather_forecast(lat, lng, days=4):
             })
     return forecast
 
-# def get_famous_real(location_name):
-#     openai.api_key = os.environ.get("OPENAI_API_KEY")
-#     if not openai.api_key:
-#         return {"desc": "No OpenAI API key set.", "places": []}
-#     try:
-#         prompt = f"List 3 famous places to visit and a brief sentence of what this area is known for: {location_name}."
-#         response = openai.ChatCompletion.create(
-#             model="gpt-3.5-turbo",
-#             messages=[
-#                 {"role": "system", "content": "You are a travel expert."},
-#                 {"role": "user", "content": prompt}
-#             ],
-#             max_tokens=150
-#         )
-#         text = response["choices"][0]["message"]["content"].strip()
-#         lines = text.split('\n')
-#         desc = ""
-#         places = []
-#         for line in lines:
-#             if line.strip().startswith(("1.", "2.", "3.")):
-#                 places.append(line.split(".",1)[1].strip())
-#             elif line and not desc:
-#                 desc = line
-#         return {"desc": desc, "places": places}
-#     except Exception as e:
-#         return {
-#             "desc": f"OpenAI API error: {str(e)}",
-#             "places": []
-#         }
-
-# def get_wikipedia_description(place_name):
-#     # Wikipedia API call to get a short summary for the place
-#     url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{place_name.replace(' ', '_')}"
-#     resp = requests.get(url)
-#     print(resp)
-#     if resp.ok:
-#         data = resp.json()
-#         return data.get("extract", "")  # Short summary paragraph
-#     return "Popular places to visit nearby based on real location data."
 
 import urllib.parse
 def get_wikipedia_description(place_name):
@@ -212,5 +173,8 @@ def geocode():
     else:
         return jsonify({"error": "Location not found"}), 404
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render sets PORT env var
+    app.run(host="0.0.0.0", port=port, debug=True)
+
